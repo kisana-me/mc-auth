@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>マイクラ認証</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="認証 | AMS - Amiverse Minecraft Server">
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: sans-serif;
+    }
+    header {
+      font-weight: bolder;
+      font-size: 26px;
+      background: #b2ffa4;
+    }
+    footer {
+      border-top: 1px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <header>AMS - Amiverse Minecraft Server</header>
+  <h1>Googleアカウント認証</h1>
+  <form action="/verify-code" method="POST">
+    <label for="code">認証コード:</label>
+    <input type="text" name="code" id="code" required pattern="\d{6}" />
+    <br><br>
+    <p>メールアドレスとマインクラフトアカウントが記録されます。</p>
+    <button type="submit">同意してGoogleでログイン</button>
+    <br><br>
+  </form>
+  <footer>
+    <a href="https://mc.amiverse.net/">AMSトップへ</a>
+    <div><small>Amiverse Minecraft Server</small></div>
+  </footer>
+</body>
+
+</html>

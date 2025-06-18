@@ -1,0 +1,16 @@
+{
+  "name": "minecraft-auth-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "5.1.0",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "pg": "8.14.1"
+  }
+}

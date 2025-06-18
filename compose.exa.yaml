@@ -1,0 +1,38 @@
+services:
+  backend:
+    image: node:18
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db
+    command: >
+      bash -c "npm i && node app.js"
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: mcuser
+      POSTGRES_PASSWORD: mcpass
+      POSTGRES_DB: mc_auth
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
